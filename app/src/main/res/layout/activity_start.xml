@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/start_screen"
+        android:layout_width="503dp"
+        android:layout_height="759dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/start_screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428"
+        app:srcCompat="@drawable/start_screen" />
+
+    <Button
+        android:id="@+id/choose_a_name"
+        android:layout_width="303dp"
+        android:layout_height="61dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/choose_a_name"
+        android:onClick="buttonClickName"
+        android:text="@string/choose_a_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="303dp"
+        android:layout_height="64dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/new_game"
+        android:onClick="buttonClickGame"
+        android:text="@string/new_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_a_name"
+        app:layout_constraintVertical_bias="0.185"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/about_me"
+        android:layout_width="299dp"
+        android:layout_height="63dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/about"
+        android:onClick="buttonClickAbout"
+        android:text="@string/about"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_game"
+        app:layout_constraintVertical_bias="0.255"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
