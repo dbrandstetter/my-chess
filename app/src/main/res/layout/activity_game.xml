@@ -1490,4 +1490,18 @@
         app:layout_constraintTop_toTopOf="@+id/chessboard"
         app:layout_constraintVertical_bias="0.737" />
 
+    <Button
+        android:id="@+id/linkGameScreen"
+        android:layout_width="365dp"
+        android:layout_height="48dp"
+        android:background="@color/light_green"
+        android:contentDescription="@string/how_to_play"
+        android:onClick="buttonClickGameRules"
+        app:layout_constraintBottom_toTopOf="@+id/chessboard"
+        app:layout_constraintEnd_toEndOf="@+id/chessboard"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/chessboard"
+        app:layout_constraintTop_toTopOf="@+id/game_screen"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

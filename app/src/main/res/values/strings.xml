@@ -3,8 +3,10 @@
 
     <string name="chessboard">chessboard</string>
     <string name="time">Time:</string>
-    <string name="how_to_play"><a href="https://www.officialgamerules.org/chess">-How to play-</a></string>
+    <string name="how_to_play"><a href="https://www.officialgamerules.org/chess">game rules</a></string>
     <string name="htl_rennweg"><a href="https://www.htlrennweg.at/">- htl rennweg -</a></string>
+    <string name="github"><a href="https://github.com/dbrandstetter/MyChess.git">sourcecode on github</a></string>
+    <string name="nickname_generator"><a href="https://www.namegeneratorfun.com/nickname">nickname generator</a></string>
 
     <string name="player_1">Player 1</string>
     <string name="player_2">Player 2</string>

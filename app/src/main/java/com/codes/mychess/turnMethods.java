@@ -1,6 +1,5 @@
 package com.codes.mychess;
 
-import static com.codes.mychess.isValidTurn.getColor;
 import static com.codes.mychess.storage.*;
 
 import android.graphics.Color;
@@ -16,8 +15,29 @@ import java.util.*;
 
 import javax.xml.namespace.QName;
 
-// this class has most of the methods used in every turn
+// this class has all of the methods used in every turn if possible (if they include a ".findViewById()" I couldn't keep them here
+// because of the declaration they would have produced a NullPointerException so I moved them in the gameActivity
 public class turnMethods {
+
+    // checks after every turn if the game is over by checking of the two kings are still there
+    public static boolean isGameOver()
+    {
+        short kingCount = 0;
+
+        // checks for every field...
+        for (String[] row : chessboard) {
+            for (String field : row) {
+                // ...whether there is a king on it
+                if (field.equalsIgnoreCase("king_black") || field.equalsIgnoreCase("king_white"))
+                {
+                    kingCount++;
+                }
+            }
+        }
+
+        // if there are two kings, the game isn't over, else (there is only 1) it is
+        return kingCount != 2;
+    }
 
     // if it is known, that the game is over, this returns the name of the winning king
     public static String getWinner ()
@@ -35,22 +55,22 @@ public class turnMethods {
     }
 
     // if the game winner is known, the winning message for the player is made visible
+    /*
     public static void showWinner(String winner)
     {
-        ImageView imageView = null;
-
         if (winner.equalsIgnoreCase("king_white"))
         {
-            imageView = (ImageView) imageView.findViewById(R.id.winner_white);
+            ImageView win_message = (ImageView) findViewById(R.id.winner_white);
+            win_message.setVisibility(View.VISIBLE);
         }
         else if (winner.equalsIgnoreCase("king_black"))
         {
-            imageView = (ImageView) imageView.findViewById(R.id.winner_black);
-
+            ImageView win_message = (ImageView) findViewById(R.id.winner_black);
+            win_message.setVisibility(View.VISIBLE);
         }
-
-        imageView.setVisibility(View.VISIBLE);
     }
+
+     */
 
     // this method tells, if by the current turn any enemy was hit
     public static boolean enemyHit (String destinationField)
@@ -77,11 +97,26 @@ public class turnMethods {
         }
     }
 
+    public static String getColor(String name)
+    {
+        String storage;
+
+        if (name.equalsIgnoreCase("rook_black1") || name.equalsIgnoreCase("knight_black1") || name.equalsIgnoreCase("bishop_black1") || name.equalsIgnoreCase("queen_black") || name.equalsIgnoreCase("king_black") || name.equalsIgnoreCase("bishop_black2") || name.equalsIgnoreCase("knight_black2") || name.equalsIgnoreCase("rook_black2") || name.equalsIgnoreCase(
+                "pawn_black1") || name.equalsIgnoreCase("pawn_black2") || name.equalsIgnoreCase("pawn_black3") || name.equalsIgnoreCase("pawn_black4") || name.equalsIgnoreCase("pawn_black5") || name.equalsIgnoreCase("pawn_black6") || name.equalsIgnoreCase("pawn_black7") || name.equalsIgnoreCase("pawn_black8"))
+        {
+            storage = "black";
+        } else
+        {
+            storage = "white";
+        }
+
+        return storage;
+    }
+
     // if an enemy was hit, the responding figure should be deleted out of chessboard and should be overwritten
+    /*
     public static void removeEnemy (String destinationField)
     {
-        ImageView imageView = null;
-
         int row, column;
         row = 0;
         column = 0;
@@ -96,278 +131,342 @@ public class turnMethods {
             }
         }
 
+        ImageView imageView = null;
+
         if(chessboard[row][column].equalsIgnoreCase("rook_black1"))
         {
-            imageView = (ImageView) imageView.findViewById(R.id.rook_black1);
+           ImageView rook_black1 = (ImageView) findViewById(R.id.rook_black1);
         }
         else if (chessboard[row][column].equalsIgnoreCase("knight_black1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_black1));
+           ImageView knight_black1 = (ImageView) findViewById((R.id.knight_black1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("bishop_black1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_black1));
+           ImageView bishop_black1 = (ImageView) findViewById((R.id.bishop_black1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("queen_black"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.queen_black));
+           ImageView queen_black = (ImageView) findViewById((R.id.queen_black));
         }
         else if (chessboard[row][column].equalsIgnoreCase("king_black"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.king_black));
+           ImageView king_black = (ImageView) findViewById((R.id.king_black));
         }
         else if (chessboard[row][column].equalsIgnoreCase("bishop_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_black2));
+           ImageView bishop_black2 = (ImageView) findViewById((R.id.bishop_black2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("knight_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_black2));
+           ImageView knight_black2 = (ImageView) findViewById((R.id.knight_black2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("rook_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.rook_black2));
+           ImageView rook_black2 = (ImageView) findViewById((R.id.rook_black2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black1));
+           ImageView pawn_black1 = (ImageView) findViewById((R.id.pawn_black1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black2));
+           ImageView pawn_black2 = (ImageView) findViewById((R.id.pawn_black2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black3"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black3));
+           ImageView pawn_black3 = (ImageView) findViewById((R.id.pawn_black3));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black4"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black4));
+           ImageView pawn_black4 = (ImageView) findViewById((R.id.pawn_black4));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black5"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black5));
+           ImageView pawn_black5 = (ImageView) findViewById((R.id.pawn_black5));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black6"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black6));
+           ImageView pawn_black6 = (ImageView) findViewById((R.id.pawn_black6));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black7"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black7));
+           ImageView pawn_black7 = (ImageView) findViewById((R.id.pawn_black7));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_black8"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black8));
+           ImageView pawn_black8 = (ImageView) findViewById((R.id.pawn_black8));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white1));
+           ImageView pawn_white1 = (ImageView) findViewById((R.id.pawn_white1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white2));
+           ImageView pawn_white2 = (ImageView) findViewById((R.id.pawn_white2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white3"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white3));
+           ImageView pawn_white3 = (ImageView) findViewById((R.id.pawn_white3));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white4"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white4));
+           ImageView pawn_white4 = (ImageView) findViewById((R.id.pawn_white4));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white5"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white5));
+           ImageView pawn_white5 = (ImageView) findViewById((R.id.pawn_white5));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white6"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white6));
+           ImageView pawn_white6 = (ImageView) findViewById((R.id.pawn_white6));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white7"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white7));
+           ImageView pawn_white7 = (ImageView) findViewById((R.id.pawn_white7));
         }
         else if (chessboard[row][column].equalsIgnoreCase("pawn_white8"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white8));
+           ImageView pawn_white8 = (ImageView) findViewById((R.id.pawn_white8));
         }
         else if (chessboard[row][column].equalsIgnoreCase("rook_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.rook_white1));
+           ImageView rook_white1 = (ImageView) findViewById((R.id.rook_white1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("knight_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_white1));
+           ImageView knight_white1 = (ImageView) findViewById((R.id.knight_white1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("bishop_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_white1));
+           ImageView bishop_white1 = (ImageView) findViewById((R.id.bishop_white1));
         }
         else if (chessboard[row][column].equalsIgnoreCase("queen_white"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.queen_white));
+           ImageView queen_white = (ImageView) findViewById((R.id.queen_white));
         }
         else if (chessboard[row][column].equalsIgnoreCase("king_white"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.king_white));
+           ImageView king_white = (ImageView) findViewById((R.id.king_white));
         }
         else if (chessboard[row][column].equalsIgnoreCase("bishop_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_white2));
+           ImageView bishop_white2 = (ImageView) findViewById((R.id.bishop_white2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("knight_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_white2));
+           ImageView knight_white2 = (ImageView) findViewById((R.id.knight_white2));
         }
         else if (chessboard[row][column].equalsIgnoreCase("rook_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.rook_white2));
+           ImageView rook_white2 = (ImageView) findViewById((R.id.rook_white2));
         } else
         {
-            imageView = (ImageView) imageView.findViewById((R.id.error_message));
+           ImageView error_message = (ImageView) findViewById((R.id.error_message));
         }
 
-        // imageView.setVisibility(View.GONE);
+        imageView.setVisibility(View.GONE);
         
     }
+    
+     */
 
     // after every valid turn the selected figure must be moved to the destination and the starting field should be filled with the default value
+    /*
     public static void moveFigure (String destinationField)
     {
-        ImageView imageView = null;
-
         if(selectedField.equalsIgnoreCase("rook_black1"))
         {
-            imageView = (ImageView) imageView.findViewById(R.id.rook_black1);
+            ImageView imageView = (ImageView) findViewById(R.id.rook_black1);
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("knight_black1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_black1));
+            ImageView imageView = (ImageView) findViewById((R.id.knight_black1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("bishop_black1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_black1));
+            ImageView imageView = (ImageView) findViewById((R.id.bishop_black1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("queen_black"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.queen_black));
+            ImageView imageView = (ImageView) findViewById((R.id.queen_black));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("king_black"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.king_black));
+            ImageView imageView = (ImageView) findViewById((R.id.king_black));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("bishop_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_black2));
+            ImageView imageView = (ImageView) findViewById((R.id.bishop_black2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("knight_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_black2));
+            ImageView imageView = (ImageView) findViewById((R.id.knight_black2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("rook_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.rook_black2));
+            ImageView imageView = (ImageView) findViewById((R.id.rook_black2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black1));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black2));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black3"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black3));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black3));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black4"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black4));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black4));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black5"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black5));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black5));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black6"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black6));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black6));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black7"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black7));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black7));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_black8"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_black8));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_black8));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white1));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white2));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white3"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white3));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white3));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white4"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white4));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white4));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white5"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white5));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white5));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white6"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white6));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white6));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white7"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white7));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white7));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("pawn_white8"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.pawn_white8));
+            ImageView imageView = (ImageView) findViewById((R.id.pawn_white8));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("rook_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.rook_white1));
+            ImageView imageView = (ImageView) findViewById((R.id.rook_white1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("knight_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_white1));
+            ImageView imageView = (ImageView) findViewById((R.id.knight_white1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("bishop_white1"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_white1));
+            ImageView imageView = (ImageView) findViewById((R.id.bishop_white1));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("queen_white"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.queen_white));
+            ImageView imageView = (ImageView) findViewById((R.id.queen_white));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("king_white"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.king_white));
+            ImageView imageView = (ImageView) findViewById((R.id.king_white));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("bishop_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.bishop_white2));
+            ImageView imageView = (ImageView) findViewById((R.id.bishop_white2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("knight_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.knight_white2));
+            ImageView imageView = (ImageView) findViewById((R.id.knight_white2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
         else if (selectedField.equalsIgnoreCase("rook_white2"))
         {
-            imageView = (ImageView) imageView.findViewById((R.id.rook_white2));
+            ImageView imageView = (ImageView) findViewById((R.id.rook_white2));
+            imageView.setX(getDestinationX(destinationField));
+            imageView.setY(getDestinationY(destinationField));
         }
-
-        imageView.setX(getDestinationX(destinationField));
-        imageView.setY(getDestinationY(destinationField));
         
         Button button = null;
         
@@ -647,8 +746,10 @@ public class turnMethods {
         }
     }
 
+     */
+
     // returns the destination X for the turn
-    private static float getDestinationX (String destinationField) {
+    public static float getDestinationX (String destinationField) {
         for (int i = 0; i < chessboard.length; i++) {
             for (int j = 0; j < chessboard.length; j++) {
                 if (chessboard[i][j].equalsIgnoreCase(destinationField)) {
@@ -661,7 +762,7 @@ public class turnMethods {
     }
 
     // returns the destination Y for the turn
-    private static float getDestinationY(String destinationField) {
+    public static float getDestinationY(String destinationField) {
         for (int i = 0; i < chessboard.length; i++) {
             for (int j = 0; j < chessboard.length; j++) {
                 if (chessboard[i][j].equalsIgnoreCase(destinationField)) {
