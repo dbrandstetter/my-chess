@@ -23,6 +23,7 @@
     <string name="done">done</string>
     <string name="return_about">return</string>
     <string name="return_game">return</string>
+    <string name="click_canceler">a blank button for when the game is stopped</string>
 
     <string name="start_screen">start screen</string>
     <string name="name_screen">name_screen</string>

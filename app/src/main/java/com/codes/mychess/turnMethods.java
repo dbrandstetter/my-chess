@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
 // because of the declaration they would have produced a NullPointerException so I moved them in the gameActivity
 public class turnMethods {
 
-    // checks after every turn if the game is over by checking of the two kings are still there
+    // checks after every turn if the game is over by checking ff the two kings are still there
     public static boolean isGameOver()
     {
         short kingCount = 0;

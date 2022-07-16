@@ -22,8 +22,4 @@ public class storage {
     public static String playerBlack = "Player 2";
     public static short selectionStage = 0;
     public static int turns = 0;
-    public static int lastSelectionRow = 0;
-    public static int lastSelectionColumn = 0;
-    public static int lastDestinationRow = 0;
-    public static int lastDestinationColumn = 0;
 }
