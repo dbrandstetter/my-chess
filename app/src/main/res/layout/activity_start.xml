@@ -69,9 +69,9 @@
 
     <Button
         android:id="@+id/linkStartScreen"
-        android:layout_width="375dp"
+        android:layout_width="167dp"
         android:layout_height="48dp"
-        android:background="@color/light_green"
+        android:background="@color/transparent"
         android:contentDescription="@string/how_to_play"
         android:onClick="buttonClickGameRules"
         app:layout_constraintBottom_toTopOf="@+id/choose_a_name"

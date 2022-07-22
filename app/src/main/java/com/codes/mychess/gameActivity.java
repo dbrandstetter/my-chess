@@ -41,6 +41,12 @@ public class gameActivity extends AppCompatActivity {
         TextView name_white = findViewById(R.id.name_white);
         name_white.setText(playerWhite);
 
+        // resets some values in storage
+        playersTurn = "white";
+        selectedField = "";
+        selectionStage = 0;
+        turns = 0;
+
         // gets all the buttons by names so I can change their attributes later
         final Button b00 = findViewById(R.id.b00);
         final Button b01 = findViewById(R.id.b01);
@@ -144,6 +150,74 @@ public class gameActivity extends AppCompatActivity {
 
         final ImageView win_white = findViewById(R.id.winner_white);
         final ImageView win_black = findViewById(R.id.winner_black);
+
+        win_white.setVisibility(View.INVISIBLE);
+        win_black.setVisibility(View.INVISIBLE);
+
+        b00.setClickable(true);
+        b01.setClickable(true);
+        b02.setClickable(true);
+        b03.setClickable(true);
+        b04.setClickable(true);
+        b05.setClickable(true);
+        b06.setClickable(true);
+        b07.setClickable(true);
+        b10.setClickable(true);
+        b11.setClickable(true);
+        b12.setClickable(true);
+        b13.setClickable(true);
+        b14.setClickable(true);
+        b15.setClickable(true);
+        b16.setClickable(true);
+        b17.setClickable(true);
+        b20.setClickable(true);
+        b21.setClickable(true);
+        b22.setClickable(true);
+        b23.setClickable(true);
+        b24.setClickable(true);
+        b25.setClickable(true);
+        b26.setClickable(true);
+        b27.setClickable(true);
+        b30.setClickable(true);
+        b31.setClickable(true);
+        b32.setClickable(true);
+        b33.setClickable(true);
+        b34.setClickable(true);
+        b35.setClickable(true);
+        b36.setClickable(true);
+        b37.setClickable(true);
+        b40.setClickable(true);
+        b41.setClickable(true);
+        b42.setClickable(true);
+        b43.setClickable(true);
+        b44.setClickable(true);
+        b45.setClickable(true);
+        b46.setClickable(true);
+        b47.setClickable(true);
+        b50.setClickable(true);
+        b51.setClickable(true);
+        b52.setClickable(true);
+        b53.setClickable(true);
+        b54.setClickable(true);
+        b55.setClickable(true);
+        b56.setClickable(true);
+        b57.setClickable(true);
+        b60.setClickable(true);
+        b61.setClickable(true);
+        b62.setClickable(true);
+        b63.setClickable(true);
+        b64.setClickable(true);
+        b65.setClickable(true);
+        b66.setClickable(true);
+        b67.setClickable(true);
+        b70.setClickable(true);
+        b71.setClickable(true);
+        b72.setClickable(true);
+        b73.setClickable(true);
+        b74.setClickable(true);
+        b75.setClickable(true);
+        b76.setClickable(true);
+        b77.setClickable(true);
 
         b00.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -638,6 +712,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -1147,6 +1235,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -1656,6 +1758,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -2093,7 +2209,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -2165,6 +2281,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -2602,7 +2732,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -2674,6 +2804,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -3111,7 +3255,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -3183,6 +3327,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -3620,7 +3778,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -3692,6 +3850,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -4129,7 +4301,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -4201,6 +4373,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -4638,7 +4824,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -4710,6 +4896,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -5147,7 +5347,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -5219,6 +5419,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -5656,7 +5870,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -5728,6 +5942,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -6165,7 +6393,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -6237,6 +6465,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -6674,7 +6916,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -6746,6 +6988,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -7183,7 +7439,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -7255,6 +7511,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -7692,7 +7962,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -7764,6 +8034,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -8201,7 +8485,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -8273,6 +8557,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -8710,7 +9008,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -8782,6 +9080,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -9219,7 +9531,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -9291,6 +9603,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -9728,7 +10054,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -9800,6 +10126,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -10237,7 +10577,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -10309,6 +10649,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -10746,7 +11100,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -10818,6 +11172,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -11255,7 +11623,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -11327,6 +11695,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -11764,7 +12146,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -11836,6 +12218,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -12273,7 +12669,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -12345,6 +12741,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -12782,7 +13192,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -12854,6 +13264,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -13291,7 +13715,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -13363,6 +13787,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -13800,7 +14238,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -13872,6 +14310,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -14309,7 +14761,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -14381,6 +14833,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -14818,7 +15284,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -14890,6 +15356,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -15327,7 +15807,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -15399,6 +15879,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -15836,7 +16330,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -15908,6 +16402,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -16345,7 +16853,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -16417,6 +16925,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -16854,7 +17376,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -16926,6 +17448,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -17363,7 +17899,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -17435,6 +17971,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -17872,7 +18422,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -17944,6 +18494,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -18381,7 +18945,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -18453,6 +19017,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -18890,7 +19468,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -18962,6 +19540,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -19399,7 +19991,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -19471,6 +20063,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -19908,7 +20514,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -19980,6 +20586,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -20417,7 +21037,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -20489,6 +21109,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -20926,7 +21560,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -20998,6 +21632,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -21435,7 +22083,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -21507,6 +22155,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -21944,7 +22606,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -22016,6 +22678,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -22453,7 +23129,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -22525,6 +23201,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -22962,7 +23652,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -23034,6 +23724,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -23471,7 +24175,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -23543,6 +24247,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -23980,7 +24698,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -24052,6 +24770,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -24489,7 +25221,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -24561,6 +25293,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -24998,7 +25744,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -25070,6 +25816,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -25507,7 +26267,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -25579,6 +26339,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -26016,7 +26790,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -26088,6 +26862,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -26525,7 +27313,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -26597,6 +27385,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -27034,7 +27836,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -27106,6 +27908,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -27543,7 +28359,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -27615,6 +28431,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -28052,7 +28882,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -28124,6 +28954,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -28561,7 +29405,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -28633,6 +29477,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -29070,7 +29928,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -29142,6 +30000,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -29579,7 +30451,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -29651,6 +30523,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -30088,7 +30974,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -30160,6 +31046,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -30597,7 +31497,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -30669,6 +31569,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -31106,7 +32020,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -31178,6 +32092,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -31615,7 +32543,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -31687,6 +32615,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -32124,7 +33066,7 @@ public class gameActivity extends AppCompatActivity {
                     {
                         // gets the player who won and displays a win message
                         String victorious = getWinner();
-                        
+
                         // showWinner(victorious);
                         if (victorious.equalsIgnoreCase("king_white")) {
                             win_white.setVisibility(View.VISIBLE);
@@ -32196,6 +33138,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -32705,6 +33661,20 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
+                        chessboard = {
+                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
+                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
+                                {"20", "21", "22", "23", "24", "25", "26", "27",},
+                                {"30", "31", "32", "33", "34", "35", "36", "37",},
+                                {"40", "41", "42", "43", "44", "45", "46", "47",},
+                                {"50", "51", "52", "53", "54", "55", "56", "57",},
+                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
+                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
+                        };
+                        playersTurn = "white";
+                        selectedField = "";
+                        selectionStage = 0;
+                        turns = 0;
                     }
 
                     // marks that a new turn can start
