@@ -113,7 +113,7 @@ public class turnMethods {
         for (int i = 0; i < chessboard.length; i++) {
             for (int j = 0; j < chessboard.length; j++) {
                 if (chessboard[i][j].equalsIgnoreCase(destinationField)) {
-                    return 450 + 139 * i;
+                    return 530 + 139 * i;
                 }
             }
         }

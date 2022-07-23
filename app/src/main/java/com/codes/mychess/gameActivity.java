@@ -712,20 +712,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -734,6 +720,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b00.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -1235,20 +1296,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -1257,6 +1304,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b01.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -1758,20 +1880,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -1780,6 +1888,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b02.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -2281,20 +2464,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -2303,6 +2472,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b03.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -2804,20 +3048,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -2826,6 +3056,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b04.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -3327,20 +3632,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -3349,6 +3640,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b05.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -3850,20 +4216,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -3872,6 +4224,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b06.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -4373,20 +4800,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -4395,6 +4808,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b07.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -4896,20 +5384,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -4918,6 +5392,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b10.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -5419,20 +5968,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -5441,6 +5976,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b11.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -5942,20 +6552,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -5964,6 +6560,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b12.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -6465,20 +7136,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -6487,6 +7144,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b13.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -6988,20 +7720,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -7010,6 +7728,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b14.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -7511,20 +8304,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -7533,6 +8312,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b15.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -8034,20 +8888,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -8056,6 +8896,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b16.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -8557,20 +9472,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -8579,6 +9480,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b17.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -9080,20 +10056,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -9102,6 +10064,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b20.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -9603,20 +10640,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -9625,6 +10648,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b21.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -10126,20 +11224,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -10148,6 +11232,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b22.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -10649,20 +11808,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -10671,6 +11816,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b23.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -11172,20 +12392,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -11194,6 +12400,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b24.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -11695,20 +12976,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -11717,6 +12984,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b25.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -12218,20 +13560,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -12240,6 +13568,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b26.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -12741,20 +14144,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -12763,6 +14152,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b27.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -13264,20 +14728,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -13286,6 +14736,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b30.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -13787,20 +15312,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -13809,6 +15320,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b31.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -14310,20 +15896,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -14332,6 +15904,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b32.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -14833,20 +16480,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -14855,6 +16488,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b33.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -15356,20 +17064,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -15378,6 +17072,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b34.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -15879,20 +17648,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -15901,6 +17656,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b35.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -16402,20 +18232,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -16424,6 +18240,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b36.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -16925,20 +18816,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -16947,6 +18824,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b37.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -17448,20 +19400,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -17470,6 +19408,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b40.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -17971,20 +19984,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -17993,6 +19992,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b41.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -18494,20 +20568,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -18516,6 +20576,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b42.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -19017,20 +21152,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -19039,6 +21160,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b43.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -19540,20 +21736,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -19562,6 +21744,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b44.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -20063,20 +22320,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -20085,6 +22328,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b45.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -20586,20 +22904,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -20608,6 +22912,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b46.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -21109,20 +23488,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -21131,6 +23496,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b47.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -21632,20 +24072,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -21654,6 +24080,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b50.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -22155,20 +24656,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -22177,6 +24664,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b51.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -22678,20 +25240,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -22700,6 +25248,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b52.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -23201,20 +25824,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -23223,6 +25832,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b53.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -23724,20 +26408,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -23746,6 +26416,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b54.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -24247,20 +26992,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -24269,6 +27000,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b55.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -24770,20 +27576,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -24792,6 +27584,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b56.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -25293,20 +28160,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -25315,6 +28168,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b57.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -25816,20 +28744,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -25838,6 +28752,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b60.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -26339,20 +29328,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -26361,6 +29336,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b61.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -26862,20 +29912,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -26884,6 +29920,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b62.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -27385,20 +30496,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -27407,6 +30504,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b63.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -27908,20 +31080,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -27930,6 +31088,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b64.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -28431,20 +31664,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -28453,6 +31672,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b65.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -28954,20 +32248,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -28976,6 +32256,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b66.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -29477,20 +32832,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -29499,6 +32840,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b67.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -30000,20 +33416,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -30022,6 +33424,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b70.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -30523,20 +34000,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -30545,6 +34008,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b71.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -31046,20 +34584,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -31068,6 +34592,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b72.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -31569,20 +35168,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -31591,6 +35176,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b73.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -32092,20 +35752,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -32114,6 +35760,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b74.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -32615,20 +36336,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -32637,6 +36344,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b75.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -33138,20 +36920,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -33160,6 +36928,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b76.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -33661,20 +37504,6 @@ public class gameActivity extends AppCompatActivity {
                         b75.setClickable(false);
                         b76.setClickable(false);
                         b77.setClickable(false);
-                        chessboard = {
-                                {"rook_black1", "knight_black1", "bishop_black1", "queen_black", "king_black", "bishop_black2", "knight_black2", "rook_black2"},
-                                {"pawn_black1", "pawn_black2", "pawn_black3", "pawn_black4", "pawn_black5", "pawn_black6", "pawn_black7", "pawn_black8"},
-                                {"20", "21", "22", "23", "24", "25", "26", "27",},
-                                {"30", "31", "32", "33", "34", "35", "36", "37",},
-                                {"40", "41", "42", "43", "44", "45", "46", "47",},
-                                {"50", "51", "52", "53", "54", "55", "56", "57",},
-                                {"pawn_white1", "pawn_white2", "pawn_white3", "pawn_white4", "pawn_white5", "pawn_white6", "pawn_white7", "pawn_white8"},
-                                {"rook_white1", "knight_white1", "bishop_white1", "king_white", "queen_white", "bishop_white2", "knight_white2", "rook_white2"}
-                        };
-                        playersTurn = "white";
-                        selectedField = "";
-                        selectionStage = 0;
-                        turns = 0;
                     }
 
                     // marks that a new turn can start
@@ -33683,6 +37512,81 @@ public class gameActivity extends AppCompatActivity {
 
                     // increments the turns
                     turns++;
+                }
+                // when the player wants to choose an other figure to move
+                else if ((selectionStage == 1) && validSelection(nameOfField))
+                {
+                    // the previous turn is done so all fields must not be highlighted green again
+                    b00.setBackgroundColor(Color.parseColor("#00000000"));
+                    b01.setBackgroundColor(Color.parseColor("#00000000"));
+                    b02.setBackgroundColor(Color.parseColor("#00000000"));
+                    b03.setBackgroundColor(Color.parseColor("#00000000"));
+                    b04.setBackgroundColor(Color.parseColor("#00000000"));
+                    b05.setBackgroundColor(Color.parseColor("#00000000"));
+                    b06.setBackgroundColor(Color.parseColor("#00000000"));
+                    b07.setBackgroundColor(Color.parseColor("#00000000"));
+                    b10.setBackgroundColor(Color.parseColor("#00000000"));
+                    b11.setBackgroundColor(Color.parseColor("#00000000"));
+                    b12.setBackgroundColor(Color.parseColor("#00000000"));
+                    b13.setBackgroundColor(Color.parseColor("#00000000"));
+                    b14.setBackgroundColor(Color.parseColor("#00000000"));
+                    b15.setBackgroundColor(Color.parseColor("#00000000"));
+                    b16.setBackgroundColor(Color.parseColor("#00000000"));
+                    b17.setBackgroundColor(Color.parseColor("#00000000"));
+                    b20.setBackgroundColor(Color.parseColor("#00000000"));
+                    b21.setBackgroundColor(Color.parseColor("#00000000"));
+                    b22.setBackgroundColor(Color.parseColor("#00000000"));
+                    b23.setBackgroundColor(Color.parseColor("#00000000"));
+                    b24.setBackgroundColor(Color.parseColor("#00000000"));
+                    b25.setBackgroundColor(Color.parseColor("#00000000"));
+                    b26.setBackgroundColor(Color.parseColor("#00000000"));
+                    b27.setBackgroundColor(Color.parseColor("#00000000"));
+                    b30.setBackgroundColor(Color.parseColor("#00000000"));
+                    b31.setBackgroundColor(Color.parseColor("#00000000"));
+                    b32.setBackgroundColor(Color.parseColor("#00000000"));
+                    b33.setBackgroundColor(Color.parseColor("#00000000"));
+                    b34.setBackgroundColor(Color.parseColor("#00000000"));
+                    b35.setBackgroundColor(Color.parseColor("#00000000"));
+                    b36.setBackgroundColor(Color.parseColor("#00000000"));
+                    b37.setBackgroundColor(Color.parseColor("#00000000"));
+                    b40.setBackgroundColor(Color.parseColor("#00000000"));
+                    b41.setBackgroundColor(Color.parseColor("#00000000"));
+                    b42.setBackgroundColor(Color.parseColor("#00000000"));
+                    b43.setBackgroundColor(Color.parseColor("#00000000"));
+                    b44.setBackgroundColor(Color.parseColor("#00000000"));
+                    b45.setBackgroundColor(Color.parseColor("#00000000"));
+                    b46.setBackgroundColor(Color.parseColor("#00000000"));
+                    b47.setBackgroundColor(Color.parseColor("#00000000"));
+                    b50.setBackgroundColor(Color.parseColor("#00000000"));
+                    b51.setBackgroundColor(Color.parseColor("#00000000"));
+                    b52.setBackgroundColor(Color.parseColor("#00000000"));
+                    b53.setBackgroundColor(Color.parseColor("#00000000"));
+                    b54.setBackgroundColor(Color.parseColor("#00000000"));
+                    b55.setBackgroundColor(Color.parseColor("#00000000"));
+                    b56.setBackgroundColor(Color.parseColor("#00000000"));
+                    b57.setBackgroundColor(Color.parseColor("#00000000"));
+                    b60.setBackgroundColor(Color.parseColor("#00000000"));
+                    b61.setBackgroundColor(Color.parseColor("#00000000"));
+                    b62.setBackgroundColor(Color.parseColor("#00000000"));
+                    b63.setBackgroundColor(Color.parseColor("#00000000"));
+                    b64.setBackgroundColor(Color.parseColor("#00000000"));
+                    b65.setBackgroundColor(Color.parseColor("#00000000"));
+                    b66.setBackgroundColor(Color.parseColor("#00000000"));
+                    b67.setBackgroundColor(Color.parseColor("#00000000"));
+                    b70.setBackgroundColor(Color.parseColor("#00000000"));
+                    b71.setBackgroundColor(Color.parseColor("#00000000"));
+                    b72.setBackgroundColor(Color.parseColor("#00000000"));
+                    b73.setBackgroundColor(Color.parseColor("#00000000"));
+                    b74.setBackgroundColor(Color.parseColor("#00000000"));
+                    b75.setBackgroundColor(Color.parseColor("#00000000"));
+                    b76.setBackgroundColor(Color.parseColor("#00000000"));
+                    b77.setBackgroundColor(Color.parseColor("#00000000"));
+
+                    // the background is turned light green and the selected field is stored
+                    b77.setBackgroundColor(Color.parseColor("#A9B3FC86"));
+
+                    selectedField = nameOfField;
+                    selectionStage = 1;
                 }
                 // when the selected field isn't a valid option
                 else {
@@ -33712,5 +37616,3 @@ public class gameActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
-
