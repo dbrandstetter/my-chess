@@ -139,7 +139,7 @@ public class specificMovingRules
                                     // left-lower
                                     else if (k > i && l < j) {
                                         for (int m = 1; m < Math.abs(i - k); m++) {
-                                            if (chessboard[i - m][j - m].length() != 2) {
+                                            if (chessboard[i + m][j - m].length() != 2) {
                                                 return false;
                                             }
                                         }
