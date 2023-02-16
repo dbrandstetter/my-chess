@@ -1,5 +1,4 @@
 The MyChess Android Chess App
-by David Brandstetter
 ==============================
 
 <h3>What?</h3>
@@ -7,6 +6,8 @@ by David Brandstetter
 This project is meant to be a beginners practice in Android Studio for writing mobile applications.
 Its structure is the one of a standard Android Studio project and it contains several layouts, Java files and - most importantly - a playable chess game where standard rules apply.
 It should be noted, that the game is intended for two-player-use, as a chess AI would have rather overshot my current coding knowledge.
+
+-> for visual insights in the game feel free to download <a href="https://github.com/dbrandstetter/MyChess/blob/master/projectDesc.pdf" target="_blank">"projectDesc.pdf"</a> and have a look!
 
 -------------------------------
 <h3>Why?</h3>
